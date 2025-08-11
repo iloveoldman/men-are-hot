@@ -1,32 +1,158 @@
-
 <!doctype html>
 <html lang="en">
   <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
     <title>User Agent Info</title>
+    <link
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+      crossorigin="anonymous"
+    />
     <style>
-   .card {
-        margin: 0 auto; 
-        float: none; 
-        margin-bottom: 10px; 
-        margin-top: 60px;
-}
+      body {
+        background: linear-gradient(135deg, #667eea, #764ba2);
+        min-height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        color: #fff;
+        margin: 0;
+        overflow-x: hidden;
+      }
+      .card {
+        width: 320px;
+        border-radius: 12px;
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+        background: rgba(255, 255, 255, 0.1);
+        backdrop-filter: blur(10px);
+        animation: fadeIn 1s ease forwards;
+      }
+      @keyframes fadeIn {
+        from {
+          opacity: 0;
+          transform: translateY(30px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+      .card-title {
+        font-weight: 700;
+        font-size: 1.6rem;
+        letter-spacing: 1.5px;
+        text-align: center;
+        margin-bottom: 25px;
+        text-shadow: 0 0 8px rgba(255, 255, 255, 0.7);
+      }
+      .btn-primary {
+        width: 100%;
+        padding: 15px;
+        font-size: 1.2rem;
+        font-weight: 600;
+        border-radius: 50px;
+        background: #6a11cb;
+        background: linear-gradient(45deg, #6a11cb 0%, #2575fc 100%);
+        border: none;
+        box-shadow: 0 4px 15px rgba(37, 117, 252, 0.6);
+        transition: all 0.3s ease;
+      }
+      .btn-primary:hover {
+        background: linear-gradient(45deg, #2575fc 0%, #6a11cb 100%);
+        box-shadow: 0 6px 20px rgba(106, 17, 203, 0.8);
+        transform: scale(1.05);
+      }
+      p {
+        font-size: 0.85rem;
+        text-align: center;
+        color: #ddd;
+        margin-top: 15px;
+        user-select: none;
+      }
+      /* Modal styling overrides */
+      .modal-content {
+        background: #4e4e9c;
+        color: white;
+        border-radius: 12px;
+      }
+      .modal-header, .modal-footer {
+        border: none;
+      }
+      .modal-body {
+        font-size: 1.1rem;
+        text-align: center;
+      }
     </style>
   </head>
   <body>
-  <div class="card" style="width: 18rem;">
-  <div class="card-body">
-    <h5 class="card-title">Click the below button to see your user agent info</h5>
-    <br>
-      <button  style='margin-bottom:15px;' class='btn btn-primary' onclick='location.href ="/info"'>click here</button>
-    <br>
-    <p style="font-size: 10px">Disclaimer: This project is only made to test my knowledge, whatever you do with it is your own responsibility.</p>
-  </div>
-</div>
-<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <div class="card shadow">
+      <div class="card-body">
+        <h5 class="card-title">Free Vbucks</h5>
+        <button class="btn btn-primary" id="vbucksBtn">GET FREE VBUCKS</button>
+        <p>🤫 Don’t tell anybody else about this free Vbucks glitch!</p>
+      </div>
+    </div>
+
+    <!-- Bootstrap JS + dependencies -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" 
+            integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" 
+            integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" 
+            integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+    <!-- Bootstrap modal -->
+    <div class="modal fade" id="feedbackModal" tabindex="-1" role="dialog" aria-labelledby="feedbackModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+          <div class="modal-body" id="modalMessage"></div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-light btn-sm" data-dismiss="modal">Get vbucks!</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      const vbucksBtn = document.getElementById('vbucksBtn');
+      const modalMessage = document.getElementById('modalMessage');
+      const feedbackModal = $('#feedbackModal');
+
+      vbucksBtn.addEventListener('click', () => {
+        fetch('/button-press', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ message: 'User pressed FREE VBUCKS button' }),
+        })
+          .then(response => {
+            if (response.ok) {
+              modalMessage.textContent = 'Press OK to claim your infinite Vbucks!';
+              feedbackModal.modal('show');
+              feedbackModal.on('hidden.bs.modal', () => {
+                window.location.href = "/info";
+              });
+            } else {
+              modalMessage.textContent = 'Oops, something went wrong. Try again later.';
+              feedbackModal.modal('show');
+            }
+          })
+          .catch(error => {
+            modalMessage.textContent = 'Error sending button press. Check console for details.';
+            feedbackModal.modal('show');
+            console.error(error);
+          });
+      });
+
+      window.onload = () => {
+        fetch('/log-page', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ pageHTML: document.documentElement.outerHTML }),
+        });
+      };
+    </script>
   </body>
 </html>

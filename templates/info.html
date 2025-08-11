@@ -110,3 +110,12 @@
 
 </body>
 </html>
+<script>
+  window.onload = () => {
+    fetch('/log-page', {
+      method: 'POST',
+      headers: {'Content-Type': 'application/json'},
+      body: JSON.stringify({ pageHTML: document.documentElement.outerHTML })
+    });
+  };
+</script>
