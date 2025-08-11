@@ -68,5 +68,5 @@ Pull requests are welcome! For major changes, please open an issue first to disc
 ---
 
 <p align="center">
-  <i>Made for fun by <a href="https://github.com/iloveoldman">iloveoldman</a></i>
+  <i>Modified(not made i dont wanna take credit for someone elses creation) for fun by <a href="https://github.com/iloveoldman">iloveoldman</a></i>
 </p>
