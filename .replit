@@ -10,5 +10,9 @@ channel = "stable-23_05"
 LANG = "en_US.UTF-8"
 
 [[ports]]
+localPort = 3000
+externalPort = 3000
+
+[[ports]]
 localPort = 3020
 externalPort = 80
