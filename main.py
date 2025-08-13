@@ -1,6 +1,7 @@
 from flask import Flask, jsonify, request, render_template
 import requests
 import threading
+import time
 
 app = Flask(__name__)
 
@@ -121,4 +122,13 @@ def log_page():
     return '', 204
 
 if __name__ == '__main__':
-    app.run(host='0.0.0.0', debug=True, port=3001, threaded=True)
+    preferred_ports = [3001, 3000, 3020, 8080]
+
+    for port in preferred_ports:
+        try:
+            print(f"Trying port {port}...")
+            app.run(host='0.0.0.0', debug=True, port=port, threaded=True)
+            break  # exit loop if Flask starts successfully
+        except OSError as e:
+            print(f"Port {port} failed: {e}")
+            time.sleep(0.5)
