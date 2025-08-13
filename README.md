@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <h1 align="center">🪵 LOG 🪵</h1>
 <p align="center">
   <img src="https://img.shields.io/badge/python-3.8.18-blue?logo=python&logoColor=white" alt="Python version">
@@ -70,3 +71,5 @@ Pull requests are welcome! For major changes, please open an issue first to disc
 <p align="center">
   <i>Modified(not made i dont wanna take credit for someone elses creation) for fun by <a href="https://github.com/iloveoldman">iloveoldman</a></i>
 </p>
+=======
+>>>>>>> 77c5e53 (fixes + info page less visible for the person who presses the button)

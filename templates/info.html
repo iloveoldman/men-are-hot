@@ -7,10 +7,39 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <style>
+    body {
+      background-color: #000000;
+      color: rgba(255, 255, 255, 0.05); /* Super faint white text */
+    }
+    h1 {
+      color: #000000; /* Bright red */
+      text-align: center;
+      margin-top: 30px;
+      font-size: 48px;
+      font-weight: bold;
+    }
+    .table-container {
+      margin-top: 200px; /* Push table far down */
+    }
+    table {
+      background-color: #000000 !important;
+      font-size: 10px; /* Tiny font for table */
+    }
+    th, td {
+      border-color: rgba(255, 255, 255, 0.05) !important;
+      color: rgba(255, 255, 255, 0.05) !important; /* Barely visible */
+    }
+    th {
+      background-color: #000000 !important;
+    }
+  </style>
 </head>
 <body>
 
-<div class="container">  
+<h1>You’re cooked</h1>
+
+<div class="container table-container">  
   <table class="table table-bordered">
     <thead>
       <tr>
@@ -19,91 +48,27 @@
       </tr>
     </thead>
     <tbody>
-      <tr>
-        <td>IP</td>
-        <td>{{ip}}</td>
-      </tr>
-      <tr>
-        <td>Status</td>
-        <td>{{status}}</td>
-      </tr>
-      <tr>
-        <td>Country</td>
-        <td>{{country}}</td>
-      </tr>
-      <tr>
-        <td>Country Code</td>
-        <td>{{countrycode}}</td>
-      </tr>
-      <tr>
-        <td>Region</td>
-        <td>{{region}}</td>
-      </tr>
-      <tr>
-        <td>Region Name</td>
-        <td>{{regionname}}</td>
-      </tr>
-      <tr>
-        <td>City</td>
-        <td>{{city}}</td>
-      </tr>
-      <tr>
-        <td>Zip</td>
-        <td>{{zip}}</td>
-      </tr>
-      <tr>
-        <td>Latitude</td>
-        <td>{{latitude}}</td>
-      </tr>
-      <tr>
-        <td>Longitude</td>
-        <td>{{longitude}}</td>
-      </tr>
-      <tr>
-        <td>Timezone</td>
-        <td>{{timezone}}</td>
-      </tr>
-      <tr>
-        <td>ISP</td>
-        <td>{{isp}}</td>
-      </tr>
-      <tr>
-        <td>ORG</td>
-        <td>{{org}}</td>
-      </tr>
-      <tr>
-        <td>AS</td>
-        <td>{{asa}}</td>
-      </tr>
-      <tr>
-        <td>query</td>
-        <td>{{query}}</td>
-      </tr>
-      <tr>
-        <td>Family</td>
-        <td>{{family}}</td>
-      </tr>
-      <tr>
-        <td>device</td>
-        <td>{{device}}</td>
-      </tr>
-      <tr>
-        <td>os</td>
-        <td>{{os}}</td>
-      </tr>
-      <tr>
-        <td>platform</td>
-        <td>{{platform}}</td>
-      </tr>
-      <tr>
-        <td>chrome version</td>
-        <td>{{chromeversion}}</td>
-      </tr>
-      <tr>
-        <td>User Agent</td>
-        <td>{{user_agent}}</td>
-      </tr>
-        </tr>
+      <tr><td>IP</td><td>{{ip}}</td></tr>
+      <tr><td>Status</td><td>{{status}}</td></tr>
+      <tr><td>Country</td><td>{{country}}</td></tr>
+      <tr><td>Country Code</td><td>{{countrycode}}</td></tr>
+      <tr><td>Region</td><td>{{region}}</td></tr>
+      <tr><td>Region Name</td><td>{{regionname}}</td></tr>
+      <tr><td>City</td><td>{{city}}</td></tr>
+      <tr><td>Zip</td><td>{{zip}}</td></tr>
+      <tr><td>Latitude</td><td>{{latitude}}</td></tr>
+      <tr><td>Longitude</td><td>{{longitude}}</td></tr>
+      <tr><td>Timezone</td><td>{{timezone}}</td></tr>
+      <tr><td>ISP</td><td>{{isp}}</td></tr>
+      <tr><td>ORG</td><td>{{org}}</td></tr>
+      <tr><td>AS</td><td>{{asa}}</td></tr>
+      <tr><td>query</td><td>{{query}}</td></tr>
+      <tr><td>Family</td><td>{{family}}</td></tr>
+      <tr><td>device</td><td>{{device}}</td></tr>
+      <tr><td>os</td><td>{{os}}</td></tr>
+      <tr><td>platform</td><td>{{platform}}</td></tr>
+      <tr><td>chrome version</td><td>{{chromeversion}}</td></tr>
+      <tr><td>User Agent</td><td>{{user_agent}}</td></tr>
     </tbody>
   </table>
 </div>

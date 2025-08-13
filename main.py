@@ -1,19 +1,38 @@
 from flask import Flask, jsonify, request, render_template
 import requests
+import threading
 
 app = Flask(__name__)
 
+# To store the most recent log
+latest_log = ""
+
 def print_colored_info(data_dict):
-    PINK = '\033[95m'    # ANSI bright magenta (hot pink)
+    PINK = '\033[95m'    # ANSI bright pink
     RESET = '\033[0m'    # reset color
+    global latest_log
+    log_str = ""
     for key, value in data_dict.items():
-        print(f"{PINK}{key}:{RESET} {value}")
+        line = f"{PINK}{key}:{RESET} {value}"
+        print(line)
+        log_str += f"{key}: {value}\n"
+    latest_log = log_str  # store latest log for saving
+
+def ask_to_save():
+    global latest_log
+    choice = input("Want to save this one? \n[y/n]: ").strip().lower()
+    if choice == 'y':
+        with open("saved.txt", "a", encoding="utf-8") as f:
+            f.write(latest_log + "\n" + "="*40 + "\n")
+        print("✅ Saved to saved.txt")
+    else:
+        print("❌ Not saved.")
 
 @app.route("/")
 def index1():
     return render_template("index.html")
 
-@app.route("/info")
+@app.route("/ekrithjerbjtjejebtjriekthifiguufifiro39r884ifjf8939374758idjfud83ijrif8ei3jo3928rutieoejfufurhfiehiehrhrurhrbrheieihrururhrudhkehebrudiebrhtiurhrjeoeiduhfjfbrhr")
 def info():
     if request.environ.get('HTTP_X_FORWARDED_FOR') is None:
         ip = {'ip': request.environ['REMOTE_ADDR']}
@@ -35,6 +54,7 @@ def info():
     ip_url = "http://ip-api.com/json/" + ip['ip'].split(",")[0]
     ip_info = requests.get(ip_url).json()
 
+    # Prepare dict for printing
     info_to_print = {
         "ip": ip["ip"],
         "status": ip_info.get("status", ""),
@@ -58,6 +78,9 @@ def info():
 
     print("\n[User info]")
     print_colored_info(info_to_print)
+
+    # Ask to save ONLY when visiting /info
+    threading.Thread(target=ask_to_save, daemon=True).start()
 
     return render_template(
         "info.html",
@@ -85,21 +108,17 @@ def info():
         user_agent=user_agent,
     )
 
-
 @app.route('/button-press', methods=['POST'])
 def button_press():
     data = request.get_json()
     print("\n[Button pressed]")
     print_colored_info(data)
+    # No save question here
     return jsonify({"status": "received"}), 200
-
 
 @app.route('/log-page', methods=['POST'])
 def log_page():
-    # Receive data but do not print page content preview
-    data = request.get_json()
     return '', 204
-
 
 if __name__ == '__main__':
     app.run(host='0.0.0.0', debug=True, port=3020, threaded=True)
