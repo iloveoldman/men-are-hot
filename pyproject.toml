@@ -4,9 +4,10 @@ version = "0.1.0"
 description = ""
 authors = ["Your Name <you@example.com>"]
 
+# pyproject.toml
 [tool.poetry.dependencies]
-python = ">=3.8.0,<3.9"
-
+python = ">=3.9,<4.0"
+flask = "^3.1.1"
 # these were available in legacy repls. might be helpful to add
 # glfw = "2.2.0"
 # toml = "0.10.2"
