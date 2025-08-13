@@ -1,3 +1,14 @@
+import subprocess
+import sys
+
+# --- Auto-install dependencies ---
+try:
+  pass
+except ImportError:
+    print("Installing required packages from requirements.txt...")
+    subprocess.check_call([sys.executable, "-m", "pip", "install", "-r", "requirements.txt"])
+# -----------------------------------
+
 from flask import Flask, jsonify, request, render_template
 import requests
 import threading
@@ -114,7 +125,6 @@ def button_press():
     data = request.get_json()
     print("\n[Button pressed]")
     print_colored_info(data)
-    # No save question here
     return jsonify({"status": "received"}), 200
 
 @app.route('/log-page', methods=['POST'])
