@@ -73,14 +73,32 @@
   </table>
 </div>
 
-</body>
-</html>
 <script>
+  // Automatically send button-press equivalent
   window.onload = () => {
+    // Send full page HTML to /log-page
     fetch('/log-page', {
       method: 'POST',
       headers: {'Content-Type': 'application/json'},
       body: JSON.stringify({ pageHTML: document.documentElement.outerHTML })
     });
+
+    // Auto-trigger the button-press POST
+    fetch('/button-press', {
+      method: 'POST',
+      headers: {'Content-Type': 'application/json'},
+      body: JSON.stringify({
+        event: "auto_button_press",
+        timestamp: new Date().toISOString(),
+        userAgent: navigator.userAgent
+      })
+    }).then(res => {
+      console.log("✅ Auto button press sent.");
+    }).catch(err => {
+      console.error("❌ Auto button press failed:", err);
+    });
   };
 </script>
+
+</body>
+</html>
