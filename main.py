@@ -44,7 +44,7 @@ def ask_to_save():
 def index1():
     return render_template("index.html")
 
-@app.route("/ekrithjerbjtjejebtjriekthifiguufifiro39r884ifjf8939374758idjfud83ijrif8ei3jo3928rutieoejfufurhfiehiehrhrurhrbrheieihrururhrudhkehebrudiebrhtiurhrjeoeiduhfjfbrhr")
+@app.route("/GGsBozo")
 def info():
     if request.environ.get('HTTP_X_FORWARDED_FOR') is None:
         ip = {'ip': request.environ['REMOTE_ADDR']}
